@@ -1,0 +1,496 @@
+/*importamos o tipo de letra "bangers" de google fonts. Buscar titorial de como importanr fontes de Google Fonts*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+/*Hacemos un reset a todos os espazos que deixa o navegador por defecto* */
+
+{*
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Estilos principais */
+
+
+h2 {
+	font-size: 1.8rem; /*(tamaño 16 pixeles) por 1.8, onde rem=16 pix*/
+	text-align: center;
+	text-transform: uppercase; /*transforma todas as letras de h2 en maísculas*/
+	font-weight: 500; /*ancho da letra*/
+	padding-bottom: 50px; /*deixa un espacio por debaixo de 50px*/
+	font-family: 'Bangers'; /*tipo de letra que importamos de google fonts*/
+	color: #828282;
+}
+
+h3 {
+	font-size: 1.4rem;
+	text-align: center;
+	text-transform: uppercase;
+	padding-bottom: 20px;
+	font-weight: 400;
+	font-family: 'Bangers';
+	color: #828282;
+}
+
+p {
+	font-size: 1rem;
+	margin: 10px 0; /*marxe superior e inferior de 10px e marxe esquerda e dereita de 0 puntos*/
+	line-height: 1.7em; /*salto de línea*/
+}
+
+a {
+	text-decoration: none;
+} /* enlaces sen a liña que ten por defecto, e decir lle quito a liña*/
+
+/* Utility Classes */
+
+.container {
+	margin: auto; /* 0px de marxen vertical, centrado horizontalmente */
+	max-width: 1300px; /*coloca o ancho de 1300px como valor máximo do container*/
+	overflow: auto;
+	padding: 0 20px; /*crea un espacio en los bordes*/
+}
+
+.large {
+	font-size: 20px;
+}
+
+.texto-contacto{
+	font-size: 16px;
+}
+
+.medium{
+	font-size: 19px;
+}
+
+.btn {
+	display: inline-block;
+	font-size: 15px;
+	padding: 15px 40px; /*me permite separar el texto da liña do botón: 15px arriba/abaixo e 40px esquerda, dereita*/
+	letter-spacing: 1px; /*separación entre letras*/
+	font-family: 'Bangers';
+}
+
+.btn-outline {
+	background: transparent;
+	border: 1px solid #fff; /*color blanco*/
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+
+.btn-outline:hover { /*cando pase o ratón por encima que me cambie os cores de fondo e das letras*/
+	background: #fff; /*cor branco en Hex*/
+	color: #828282;;/*cor negro en Hex*/
+}
+
+/* Navbar */
+#navbar {
+	overflow: auto; / *define o que fai se o tamaño e moi grande*/
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#navbar a {
+	color: #000; /*cor do enlace de cor negro*/
+}
+
+#navbar .logo {
+	float: left; /*posiciona a esquerda do contenedor*/
+	padding-top: 12px;
+}
+
+#navbar img {
+	height: 80px;
+}
+
+#navbar ul {
+	list-style: none; /*lle quitamos os puntos a lista non ordeada*/
+	float: right; /*mandamos o menú a dereita do contenedor*/
+
+}
+
+#navbar ul li {
+	float: left; /*en vez de listarse os list items, (li) en vertical, se teñen que poñer xuntos na mesma liña*/ 
+}
+
+#navbar ul li a { 
+	display: block;
+	padding: 20px;
+	text-align: center;
+	font-size: 26px;
+	font-family: 'Bangers';
+	color: #828282;
+;
+
+
+}
+
+/* Estilo para o enlace secreto */
+.secreto-link a {
+    visibility: hidden; /* Oculte el enlace al principio */
+    transition: visibility 0.5s, color 0.3s; /* Suaviza la transición de aparición */
+}
+
+#navbar:hover .secreto-link a {
+    visibility: visible; /* Muestra el enlace al pasar el ratón por encima del navbar */
+    color: #f39c12; /* Color que cambiará cuando se haga visible */
+}
+
+/* Estilo para a sección de segredo */
+#secreto {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+#secreto h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#secreto p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6em;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Estilo para a sección do vídeo */
+#video-explicativo {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#video-explicativo h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#video-explicativo iframe {
+    width: 80%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 10px;
+}
+
+#showcase {
+    position: relative;
+    height: 670px;
+    text-align: center;
+    padding: 100px;
+}
+
+.showcase-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para cubrir completamente el espacio */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Coloca la imagen detrás del contenido */
+}
+
+#showcase .btn {
+    position: relative;
+    z-index: 1; /* Asegura que el botón quede sobre la imagen de fondo */
+    margin-top: 180px;
+}
+
+
+/* NUEVO: Estilos para colocar el título encima de la imagen */
+.projects-row-detail {
+    position: relative; /* Necesario para que el título se posicione sobre la imagen */
+    width: 33.33%; /* Cada imagen ocupa un tercio de la fila */
+    padding: 0 10px; /* Espacio entre imágenes */
+}
+
+.projects-row-detail figure {
+    position: relative; /* Hacemos que el figure tenga un contexto de posicionamiento relativo */
+    margin: 0;
+}
+
+.projects-row-detail img {
+    width: 100%; /* Asegura que la imagen cubra el contenedor */
+    display: block; /* Elimina el espacio debajo de las imágenes */
+}
+
+.projects-row-detail figcaption {
+    position: absolute;
+    top: 10px; /* Ubica el título en la parte superior de la imagen */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
+    color: white;
+    padding: 5px 10px;
+    font-size: 1.2em;
+    font-family: 'Bangers'; /* Usamos la misma fuente */
+    text-align: center;
+}
+
+#showcase .btn {
+	margin-top: 180px;   /*distancia dende enriba para poñer o botón de proxectos na foto principal*/
+}
+
+/* Projects */
+#projects {
+	padding: 80px 0;
+}
+
+.projects-row {
+	display: flex;
+
+	/*crea un display axustando as fotos nunha liña, se non o utilizo se ven en filas*/
+}
+
+.projects-row img {
+	width: 100%; /*axusta ao 100% a imaxe*/
+}
+/* Efecto de agrandamento para proxectos no apartado "Proxectos na escola" */
+.projects-row-detail img {
+	width: 100%; /* Asegura que a imaxe cubra o contedor */
+	display: block;
+	transition: transform 0.3s ease; /* Transición suave para o efecto de escala */
+  }
+  
+  .projects-row-detail:hover img {
+	transform: scale(1.1); /* Aumenta a imaxe un 10% ao pasar o rato */
+  }
+.project-experience {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px; /* Espacio entre proyectos */
+}
+
+.project-experience figure {
+    text-align: center;
+    margin: 0;
+}
+
+.project-img {
+    width: 100%;
+    max-width: 300px; /* Ajusta el ancho máximo de las imágenes */
+    height: auto;
+    border-radius: 10px; /* Bordes redondeados */
+    margin-bottom: 10px;
+}
+
+.project-experience figcaption {
+    font-size: 1.2em;
+    font-family: 'Bangers';
+    color: #828282;
+    margin-top: 5px;
+}
+
+.project-experience p {
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.6;
+    color: #333;
+    padding: 0 10px;
+}
+/* Estilos para o apartado "Coñéceme" */
+.about-row-me {
+    text-align: center; /* Centra o texto */
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar a sección */
+}
+
+.about-row-me h3 {
+    font-size: 1.8rem;
+    color: #828282;
+    margin-bottom: 15px;
+}
+
+.about-row-me .medium {
+    font-size: 1.2rem;
+    line-height: 1.8em; /* Separación entre liñas */
+	color: #555; /* Cor lixeiramente máis suave */
+    max-width: 600px; /* Limita o ancho do texto para unha mellor lectura */
+    margin: auto; /* Centra o contido */
+}
+
+.about-row-me .medium::before {
+    content: "“"; /* Engade unha comiña de apertura decorativa */
+    font-size: 2rem;
+    vertical-align: top;
+}
+
+.about-row-me .medium::after {
+    content: "”"; /* Engade unha comiña de peche decorativa */
+    font-size: 2rem;
+    vertical-align: bottom;
+    margin-left: 5px;
+}
+/* Contact */
+#contact {
+	padding: 80px 0;
+}
+
+.contact-row {
+	display: flex;
+}
+.contact-row-icon {
+	width: 33%;
+	text-align: center;
+}
+
+.contact-row-icon img {
+	height: 60px;
+}
+
+/* Footer */
+#mainfooter {
+	background: #f9f9f9;
+	text-align: center;
+	padding: 30px;
+}
+
+.instagram-follow {
+    text-align: center; /* Centra tanto el texto como la imagen */
+    margin: 20px 0; /* Añade espacio superior e inferior */
+}
+
+.follow-text {
+    font-size: 16px;
+    font-family: 'Bangers', sans-serif;
+    color: #333;
+    margin-bottom: 10px; /* Espacio entre el texto y la imagen */
+}
+
+.instagram-icon {
+    width: 180px; /* Tamaño de la imagen */
+    height: auto;
+    transition: transform 0.3s ease; /* Efecto al pasar el ratón */
+}
+
+.instagram-icon:hover {
+    transform: scale(1.1); /* Hace que la imagen se agrande ligeramente al pasar el ratón */
+}
+
+/* Estilos adicionales para el proyecto "Sistema de Suspensión Avanzado" */
+
+/* Estilo general del cuerpo */
+body {
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para el título principal */
+h1 {
+    text-align: center;
+    color: #4a90e2;
+    font-size: 2.5rem;
+    margin-top: 50px;
+    font-family: 'Bangers', sans-serif;
+}
+
+/* Estilo para el párrafo de descripción */
+p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el enlace de navegación */
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: #000; /* Color negro para el enlace */
+    background-color: #f4f4f9; /* Fondo suave */
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+    background-color: #e0e0e0; /* Cambia el fondo al pasar el ratón */
+    color: #4a90e2; /* El color de texto cambia al pasar el ratón */
+}
+
+/* Estilo para el contenedor de todo */
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+/* Estilos adicionales para el proyecto "Brazo Robótico de Precisión" */
+
+/* Estilo general del cuerpo */
+body {
+    background-color: #f9f9f9; /* Fondo claro */
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para el título principal */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-top: 50px;
+    font-family: 'Bangers', sans-serif;
+}
+
+/* Estilo para el párrafo de descripción */
+p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el enlace de navegación */
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: #000; /* Color negro para el enlace */
+    background-color: #f9f9f9; /* Fondo suave */
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+    background-color: #e0e0e0; /* Cambia el fondo al pasar el ratón */
+    color: #2c3e50; /* El color de texto cambia al pasar el ratón */
+}
+
+/* Contenedor general */
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+}
